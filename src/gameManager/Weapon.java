@@ -11,6 +11,7 @@ public class Weapon {
     private List<Projectile> projectiles;
     private long lastShotTime;
     private int shotDelay = 500; // Meio segundo entre disparos
+    private  int damage;
 
     public Weapon(Player player) {
         this.player = player;
