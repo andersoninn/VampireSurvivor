@@ -13,6 +13,9 @@ public class Player extends GameObject implements KeyboardHandler {
     private Keyboard keyboard;
     private Rectangle rectangle;
 
+    private int damage;  // esse status é atualizado - cada arma aumenta o seu valor que se inicia em 1.
+
+
     public Player(int x, int y) {
         super(x, y, 50, 50);
         this.health = 100; // Saúde inicial do jogador
@@ -21,6 +24,8 @@ public class Player extends GameObject implements KeyboardHandler {
         rectangle = new Rectangle(x, y, 50, 50);
         rectangle.setColor(Color.BLUE);
         rectangle.fill();  // Desenha o jogador
+
+        this.damage = 1;
 
         initKeyboard(); // Iniciar o teclado para o movimento do personagem
     }
@@ -52,7 +57,7 @@ public class Player extends GameObject implements KeyboardHandler {
 
     @Override
     public void keyPressed(KeyboardEvent keyboardEvent) {
-        int moveAmount = 10; // Quantidade de movimento por tecla pressionada
+        int moveAmount = 15; // Quantidade de movimento por tecla pressionada
 
         switch (keyboardEvent.getKey()) {
             case KeyboardEvent.KEY_RIGHT:

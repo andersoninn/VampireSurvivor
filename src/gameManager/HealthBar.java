@@ -26,6 +26,9 @@ public class HealthBar {
         healthText.grow(20, 20); // Tamanho do texto
         healthText.draw(); // Desenha o texto
     }
+    public int getCurrentHealth(){
+        return currentHealth;
+    }
 
     public void update(int health) {
         this.currentHealth = health; // Atualiza a saúde atual
